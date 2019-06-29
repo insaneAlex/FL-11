@@ -1,54 +1,38 @@
-@font-face {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Open Sans Regular"), local("OpenSans-Regular"),
-    url(https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0b.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
 body,
 html {
   padding: 0;
   margin: 0 auto;
-  min-width: 800px;
-  max-width: 1700px;
+  font-family: "Open Sans", Arial, sans-serif;
 }
-
 body {
   background-color: #e8e8e8;
-  font-family: "Open Sans";
   box-sizing: border-box;
+}
+.header {
+  font-size: 1.2vw;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-content: center;
+  padding-top: 2%;
 }
 .bgArea {
   margin: 0;
   padding: 0;
   background: url("../img/sample2.jpg") no-repeat;
   background-size: cover;
-  width: 100%;
-  height: auto;
-  -ms-background-position-x: center;
-  -ms-background-position-y: center;
-  background-position: center center;
-}
-.bgText {
-  display: flex;
-  flex-direction: column;
-}
-
-.bgText p {
-  margin: 0;
 }
 .bgArea,
 .headerLinks a {
   color: whitesmoke;
 }
-.header {
+.bgText {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  align-content: center;
-  padding-top: 2%;
+  flex-direction: column;
+}
+.bgText p {
+  margin: 0;
+  height: 10vw;
 }
 .contentPaddings {
   padding-left: 4vw;
@@ -60,37 +44,34 @@ body {
   text-align: center;
 }
 .headerText {
-  letter-spacing: 4px;
+  letter-spacing: 0.32vw;
 }
-
 .headerLinks {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .headerLinks a:first-child {
-  padding-right: 5.3vw;
+  margin-right: 5.3vw;
+}
+.headerLinks a:hover {
+  font-weight: bold;
 }
 .triangle {
   width: 100%;
-  height: 270px;
+  height: 17vw;
   background: linear-gradient(to top right, #e8e8e8 0%, #e8e8e8 50%, #000 50%, #000 100%);
 }
-.bgText p {
-  height: 100px;
-}
-
 .txt1 {
   color: white;
   align-self: flex-end;
+  font-size: 1.16vw;
   padding-right: 3.5%;
-  padding-bottom: 1%;
   width: 46%;
 }
-
 .txt2 {
   align-self: flex-start;
-  font-size: 20px;
+  font-size: 1.5vw;
   width: 35%;
   padding-left: 3.5%;
 }
@@ -98,52 +79,53 @@ body {
   font-weight: bold;
 }
 .centerText {
-  padding-top: 170px;
-  padding-bottom: 150px;
+  padding-top: 13vw;
+  padding-bottom: 10vw;
 }
 .lorem {
-  letter-spacing: 6px;
-  font-size: 55px;
-  margin: 0px;
+  letter-spacing: 0.6vw;
+  font-size: 4vw;
+  margin: 0;
 }
 .brand {
-  margin-top: 0px;
+  margin-top: 0;
   color: whitesmoke;
+  font-size: 1.2vw;
 }
 .letter {
-  font-size: 90px;
+  font-size: 7.5vw;
 }
 .btns {
   display: flex;
   justify-content: space-around;
-  padding-bottom: 100px;
+  padding-bottom: 7vw;
 }
 .btns button {
   background-color: Transparent;
   cursor: pointer;
-  border: 3px solid gainsboro;
-  border-radius: 5px;
+  border: 0.2vw solid gainsboro;
+  border-radius: 0.5vw;
   color: gainsboro;
-  font-weight: 600;
-  width: 250px;
-  height: 50px;
+  font-family: "Open Sans";
+  width: 17vw;
+  height: 4.3vw;
   font-size: 1.2vw;
   transition: 500ms;
 }
 .btns button:hover {
   color: gray;
   opacity: 0.7;
-  border: 3px solid gray;
+  border: 0.2vw solid gray;
 }
 .articlesSection {
-  padding-bottom: 50px;
+  padding-bottom: 3vw;
 }
 .articlesSection h2 {
   text-align: center;
+  font-size: 2vw;
   font-weight: 500;
-  padding-bottom: 20px;
+  padding-bottom: 2.5vw;
 }
-
 .articlesSection h2 span {
   font-weight: bold;
 }
@@ -165,13 +147,16 @@ body {
 .artcl-1-img,
 .artcl-2-img {
   width: 45vw;
-  max-width: 50%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column-reverse;
 }
-.artcl-1-img img,
-.artcl-2-img img {
-  width: 100%;
+.artcl-1-img {
+  background: url("../img/sample-1.jpg");
 }
-
+.artcl-2-img {
+  background: url("../img/sample-2.jpg");
+}
 .articleSet {
   width: 38%;
   text-align: center;
@@ -182,21 +167,18 @@ body {
   align-content: center;
 }
 .articleSet p:not(:last-child) {
-  padding-bottom: 25px;
+  padding-bottom: 2vw;
 }
-
 .artcl:not(:last-child) {
-  margin-bottom: 15px;
+  margin-bottom: 1.5vw;
 }
 .bottomNews {
   width: 100%;
-  display: flex;
   flex-direction: column;
   background-color: #ffffff;
 }
-
 .photoes {
-  padding: 50px 3% 50px 3%;
+  padding: 3vw;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
@@ -204,15 +186,23 @@ body {
 .news {
   margin: 0;
   padding: 0;
-  width: 280px;
-  height: 400px;
+  width: 17vw;
+  height: 25.6vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  -webkit-box-shadow: inset 5px -25px 99px 7px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: inset 5px -25px 99px 7px rgba(0, 0, 0, 0.75);
-  box-shadow: inset 5px -25px 99px 7px rgba(0, 0, 0, 0.75);
+}
+.news,
+.artclPhoto {
+  -webkit-box-shadow: inset 0px -105px 64px -50px rgba(0, 0, 0, 0.52);
+  -moz-box-shadow: inset 0px -105px 64px -50px rgba(0, 0, 0, 0.52);
+  box-shadow: inset 0px -105px 64px -50px rgba(0, 0, 0, 0.52);
+}
+.artclPhoto p,
+.news p {
+  color: white;
+  font-size: 1.2vw;
+  padding-left: 1.5vw;
 }
 .news1 {
   background: url("../img/news-list-1.jpg") no-repeat;
@@ -226,10 +216,9 @@ body {
 .news4 {
   background: url("../img/news-list-4.jpg") no-repeat;
 }
-.news {
-  color: white;
-  padding-left: 20px;
-  font-size: 1.2vw;
+.news,
+.artclPhoto {
+  background-size: cover;
 }
 .news:not(:last-child) {
   margin-right: 1vw;
@@ -240,18 +229,18 @@ body {
   -webkit-transition: border-radius 1s;
 }
 .photoBtn {
-  width: 65px;
-  font-size: 1.2vw;
-  height: 35px;
-  margin: 20px 20px 0 0;
+  width: 5vw;
+  height: 3vw;
+  font-size: 1.1vw;
+  margin: 1.5vw 1.5vw 0 0;
   padding: 0;
   cursor: pointer;
   color: #ffffff;
   align-self: flex-end;
-  background: rgba(0, 0, 0, 0.5);
-  border: 3px solid white;
+  background: rgba(0, 0, 0, 0.45);
+  border: 0.15vw solid white;
   transition: 500ms;
-  border-radius: 10px;
+  border-radius: 0.5vw;
 }
 .photoBtn:hover {
   background: rgba(0, 0, 0, 0.7);
@@ -259,52 +248,54 @@ body {
 }
 .exploreBtn {
   width: 90%;
-  height: 50px;
+  height: 2.7vw;
   color: #ffffff;
   align-self: center;
   background: #097774;
   opacity: 0.8;
   border: none;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1.1vw;
+  letter-spacing: 0.05vw;
   font-weight: bold;
-  border-radius: 10px;
   transition: 500ms;
 }
 .exploreBtn:hover {
   background: #056966cb;
   opacity: 0.9;
-  border: 2px solid #056966cb;
+  border: 0.2vw solid #056966cb;
   color: #000;
 }
 .bttmBtn {
   text-align: center;
-  padding-bottom: 45px;
+  padding-bottom: 4vw;
 }
 .bttm-btn {
-  width: 30%;
-  height: 50px;
+  font-family: "Open Sans";
+  width: 25vw;
+  height: 4vw;
   color: #ffffff;
   border: none;
   align-self: center;
   background: rgba(8, 129, 125, 0.842);
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1.2vw;
   transition: 500ms;
-  border-radius: 10px;
+  border-radius: 1vw;
+}
+.cntry {
+  font-weight: bolder;
 }
 .bttm-btn:hover {
   color: #000;
   background-color: #033d3bcb;
-  border: 2px solid #000;
+  border: 0.2vw solid #000;
 }
 .newsletterWrapper {
-  padding-left: 4%;
-  padding-right: 4%;
-  margin-bottom: 35px;
+  margin: 3vw 4% 3vw 4%;
 }
 .newsletterWrapper p {
-  font-size: 1.1vw;
+  font-size: 1.15vw;
 }
 .newsletter {
   display: flex;
@@ -312,8 +303,8 @@ body {
   flex-direction: row;
 }
 .newsletter label {
-  font-size: 2vw;
-  padding-right: 2%;
+  font-size: 1.9vw;
+  padding-right: 1vw;
 }
 .newsletter input,
 .newsletter button {
@@ -322,18 +313,19 @@ body {
   border: 0;
   height: 3vw;
   align-self: center;
+  font-family: "Open Sans";
 }
 .newsletter input {
-  padding-left: 15px;
-  font-size: 1.5vw;
-  border: 1px solid #000;
+  padding-left: 1vw;
+  font-size: 1.1vw;
+  border: 0.01vw solid #000;
+  background-color: #e8e8e8;
 }
 .newsletter button {
-  width: 100px;
+  width: 7vw;
   margin-left: 1vw;
-  font-size: 1.5vw;
+  font-size: 1.24vw;
   color: white;
-  font-weight: bold;
   background-color: #056966cb;
   cursor: pointer;
   transition: 500ms;
@@ -341,7 +333,7 @@ body {
 .newsletter button:hover {
   color: #000;
   background-color: #033d3bcb;
-  border: 2px solid #000;
+  border: 0.02vw solid #000;
 }
 .newsletter input::placeholder {
   color: #000;
@@ -352,6 +344,7 @@ footer {
   padding-left: 2vw;
   padding-right: 2vw;
   background-color: white;
+  font-size: 1.1vw;
 }
 footer p {
   color: gray;
@@ -362,11 +355,10 @@ footer nav {
 footer a {
   color: #000;
   text-decoration: none;
-  transition: 1s;
 }
 footer a:hover {
-  border-bottom: 2px solid #000;
+  font-weight: bold;
 }
 footer a:not(:last-child) {
-  margin-right: 3vw;
+  margin-right: 2vw;
 }
