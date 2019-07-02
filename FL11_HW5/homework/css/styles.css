@@ -31,11 +31,11 @@ header ul li a {
 }
 header ul li {
   padding: 0 1.3vw 0 1.1vw;
-  -webkit-transition: background 500ms;
+  -webkit-transition: background 300ms;
 }
 header ul li:hover {
   background: rgba(255, 255, 255, 0.1);
-  transition: 500ms;
+  transition: 300ms;
   cursor: pointer;
 }
 header p {
@@ -192,14 +192,14 @@ main {
 .post-txt > div,
 .post-5-txt,
 .post-photoes {
-  -webkit-transition: opacity 500ms;
+  -webkit-transition: opacity 300ms;
 }
 .post-txt > div:hover,
 .post-5-txt:hover,
 .post-photoes:hover {
   opacity: 0.5;
   cursor: pointer;
-  -webkit-transition: opacity 500ms;
+  -webkit-transition: opacity 300ms;
 }
 footer {
   font-size: 1.1vw;
