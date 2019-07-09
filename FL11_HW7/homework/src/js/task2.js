@@ -53,7 +53,7 @@ Possible prize on current attempt: ${currentPrize}$`, '0'));
                 num = Math.floor(Math.random() * (rangeMultiplicator + 1));
                 i = uONE;
                 attemps = THREE;
-                rangeMultiplicator += FOUR;
+                rangeMultiplicator *= TWO;
                 moneyMultiplicator *= THREE;
                 continue;
             }
