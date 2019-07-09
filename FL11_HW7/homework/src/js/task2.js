@@ -2,7 +2,7 @@ let decision = confirm('Do you want to play a game?')
 if (decision === false) {
     console.log('You did not become a millionaire, but can.')
 } else {
-    let rangeMultiplicator = 5;
+    let rangeMultiplicator = 8;
     let moneyMultiplicator = 1;
     let totalPrize = 0;
     let attemps = 3;
@@ -12,11 +12,12 @@ if (decision === false) {
     const ONE = 1;
     const TWO = 2;
     const THREE = 3;
+    const FOUR = 4;
     const FIVE = 5;
-    const TEN = 10;
+    const STO = 100;
     let num = Math.floor(Math.random() * (rangeMultiplicator + 1));
     for (let i = 0; i < THREE; i++) {
-        currentPrize = TEN * moneyMultiplicator;
+        currentPrize = STO * moneyMultiplicator;
         switch (attemps) {
             case TWO: currentPrize = parseInt(FIVE * moneyMultiplicator); break;
             case ONE: currentPrize = parseInt(FIVE / TWO * moneyMultiplicator); break;
@@ -28,7 +29,7 @@ Total prize: ${totalPrize}$
 Possible prize on current attempt: ${currentPrize}$`, '0'));
         if (userChoice === num) {
             switch (attemps) {
-                case THREE: totalPrize += TEN * moneyMultiplicator; break;
+                case THREE: totalPrize += STO * moneyMultiplicator; break;
                 case TWO: totalPrize += parseInt(FIVE * moneyMultiplicator); break;
                 case ONE: totalPrize += parseInt(FIVE / TWO * moneyMultiplicator); break;
                 default: break;
@@ -52,7 +53,7 @@ Possible prize on current attempt: ${currentPrize}$`, '0'));
                 num = Math.floor(Math.random() * (rangeMultiplicator + 1));
                 i = uONE;
                 attemps = THREE;
-                rangeMultiplicator *= TWO;
+                rangeMultiplicator += FOUR;
                 moneyMultiplicator *= THREE;
                 continue;
             }
