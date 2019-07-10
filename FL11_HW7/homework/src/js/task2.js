@@ -12,6 +12,7 @@ if (decision === false) {
     const ONE = 1;
     const TWO = 2;
     const THREE = 3;
+    const FOUR = 4;
     const FIVE = 5;
     const STO = 100;
     let num = Math.floor(Math.random() * (rangeMultiplicator + 1));
