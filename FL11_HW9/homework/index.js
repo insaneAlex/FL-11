@@ -29,6 +29,12 @@ const data = [
         'favoriteFruit': 'banana'
     }
 ]
+const TWO = 2;
+const THREE = 3;
+const FOUR = 4;
+const FIVE = 5;
+const SEVEN = 7;
+const EIGHT = 8;
 
 
 // 0 done
@@ -41,8 +47,6 @@ const getNumbers = (str) => {
     }
     return newArr;
 };
-getNumbers('43jkrhui34');
-
 // 1
 const findTypes = (...types) => {
     let typesObj = {};
@@ -55,24 +59,18 @@ const findTypes = (...types) => {
     }
     return typesObj;
 }
-findTypes(null, 5, 'hello')
-
 // 2
 const executeForEach = (arr, foo) => {
     for (let i = 0; i < arr.length; i++) {
         foo(arr[i]);
     }
 }
-executeForEach([1, 2, 3], e => console.log(e));
-
 // 3
 const mapArray = (arr, foo) => {
     const newArr = [];
     executeForEach(arr, (e) => newArr.push(foo(e)))
     return newArr;
 }
-mapArray([2, 5, 8], e => e + 3);
-
 // 4
 const filterArray = (arr, foo) => {
     const newArr = [];
@@ -83,22 +81,19 @@ const filterArray = (arr, foo) => {
     })
     return newArr;
 }
-filterArray([2, 5, 8], e => e > 3) // returns [5, 8]
 // 5
 const showFormattedDate = date => {
     const dateObj = {
         year: date.getFullYear(),
-        month: date.toDateString().slice(4, 7),
+        month: date.toDateString().slice(FOUR, SEVEN),
         day: date.getDate()
     }
     return `Date: ${dateObj.month} ${dateObj.day} ${dateObj.year}`;
 }
-showFormattedDate(new Date('2019-01-27T01:10:00'))
 // 6
 const canConvertToDate = str => {
     return !!Date.parse(str);
 }
-canConvertToDate('2016-13-18T00:00:00');
 // 7
 const daysBetween = (date1, date2) => {
     const mSec = 1000;
@@ -108,7 +103,6 @@ const daysBetween = (date1, date2) => {
     const differentTime = date2.getTime() - date1.getTime();
     return Math.round(differentTime / (mSec * sec * min * hours));
 }
-daysBetween(new Date('2016-03-18T00:00:00'), new Date('2016-04-19T00:00:00'));
 // 8
 const getAmountOfAdultPeople = data => {
     const daysForAdult = 6570;
@@ -126,7 +120,6 @@ const keys = obj => {
     }
     return keys;
 }
-keys({ keyOne: 1, keyTwo: 2, keyThree: 3 });
 // 10
 const values = obj => {
     const values = []; //Object.values(obj)
@@ -135,4 +128,3 @@ const values = obj => {
     }
     return values;
 }
-values({ keyOne: 1, keyTwo: 2, keyThree: 3 }) 
