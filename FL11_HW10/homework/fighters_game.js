@@ -2,11 +2,13 @@ const Fighter = props => {
     const name = props.name;
     const damage = props.damage;
     const agility = props.agility;
-    const hp = props.hp;
-
-    let curentHP = hp;
+    const totalHP = props.hp;
     let wins = 0;
-    let loses = 0;
+    let losses = 0;
+
+    let currentHP = totalHP;
+    const HUNDRED = 100;
+    const HUNDREDONE = 101;
 
     const getName = () => {
         return name;
@@ -18,11 +20,11 @@ const Fighter = props => {
         return agility;
     }
     const getHealth = () => {
-        return curentHP;
+        return currentHP;
     }
     const attack = instance => {
-        let attackSuccesChance = 100 - instance.getAgility();
-        const randChance = (Math.random() * 101);
+        const attackSuccesChance = HUNDRED - instance.getAgility();
+        const randChance = Math.floor(Math.random() * HUNDREDONE);
         let info = '';
         if (attackSuccesChance > randChance) {
             instance.dealDamage(getDamage());
@@ -33,36 +35,35 @@ const Fighter = props => {
         console.log(info)
     }
     const logCombatHistory = () => {
-        console.log(`Name: ${name}, Wins: ${wins}, Loses: ${loses}`);
+        console.log(`Name: ${name}, Wins: ${wins}, Losses: ${losses}`);
     }
     const heal = amount => {
-        curentHP += amount;
-        if (curentHP > hp) {
-            curentHP = hp;
+        currentHP += amount;
+        if (currentHP > totalHP) {
+            currentHP = totalHP;
         }
     }
     const dealDamage = dmg => {
-        curentHP -= dmg;
-        if (curentHP < 0) {
-            curentHP = 0;
+        currentHP -= dmg;
+        if (currentHP < 0) {
+            currentHP = 0;
         }
     }
     const addWin = () => {
         wins++;
     }
     const addLoss = () => {
-        loses++;
+        losses++;
     }
     return { getName, getHealth, getDamage, getAgility, attack, logCombatHistory, heal, dealDamage, addLoss, addWin }
 }
-
 const battle = (fighter1, fighter2) => {
     if (fighter1.getHealth() > 0 && fighter2.getHealth() > 0) {
         while (fighter1.getHealth() > 0 && fighter2.getHealth() > 0) {
             fighter1.attack(fighter2);
             if (fighter2.getHealth() > 0) {
                 fighter2.attack(fighter1);
-                if (fighter1.getHealth() <= 0) {
+                if (fighter1.getHealth() === 0) {
                     fighter1.addLoss();
                     fighter2.addWin();
                 }
@@ -72,6 +73,7 @@ const battle = (fighter1, fighter2) => {
             }
         }
     } else {
-        console.log('Fighters HP must be more than 0.')
+        const loser = fighter1.getHealth() === 0 ? fighter1.getName() : fighter2.getName();
+        console.log(`${loser} is dead and can't fight.`);
     }
 }
