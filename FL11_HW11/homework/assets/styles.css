@@ -1,0 +1,83 @@
+body {
+  margin: 0 auto;
+  width: 800px;
+}
+header {
+  text-align: center;
+}
+header h1 {
+  font-size: 25px;
+  color: #41b5fe;
+  margin-bottom: 40px;
+}
+header hr {
+  background-color: #41b5fe;
+  height: 7px;
+  border: 0;
+  opacity: 0.2;
+}
+
+.headerInputBlock {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.headerInputBlock input {
+  height: 48px;
+  width: 720px;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: 1px solid gainsboro;
+}
+.headerInputBlock button {
+  border: 0;
+  background: none;
+}
+.headerInputBlock i {
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+}
+.headerInputBlock i:hover {
+  opacity: 0.7;
+}
+.material-icons:hover {
+  cursor: pointer;
+}
+button::placeholder {
+  height: 50px;
+}
+#content .material-icons {
+  font-size: 35px;
+  color: #41b5fe;
+  opacity: 0.6;
+}
+.note {
+  display: flex;
+  justify-content: space-between;
+  height: 35px;
+}
+.note p {
+  font-size: 20px;
+  align-self: center;
+  color: #41b5fe;
+  margin: 0 5px;
+}
+.leftCont {
+  display: flex;
+}
+.Disabled {
+  color: gray;
+}
+
+.Disabled:hover {
+  cursor: no-drop;
+}
+#maxItemsWarn {
+  position: absolute;
+  top: 50px;
+  left: 40%;
+  right: 40%;
+  margin: auto;
+}
