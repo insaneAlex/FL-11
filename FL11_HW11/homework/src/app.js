@@ -45,6 +45,29 @@ const addNote = value => {
     let editIco = document.createElement('i');
     editIco.setAttribute('class', 'material-icons');
     editIco.innerHTML = 'edit';
+    editIco.addEventListener('click', () => {
+        if (document.getElementById('editField') === null) {
+            let editField = document.createElement('div');
+            editField.setAttribute('id', 'editField');
+
+            let editInput = document.createElement('input');
+            let saveBtn = document.createElement('i');
+            saveBtn.setAttribute('class', 'material-icons editBtn');
+            saveBtn.innerHTML = 'save';
+            saveBtn.addEventListener('click', () => {
+                text.innerHTML = editInput.value;
+                (() => {
+                    editField.remove();
+                })()
+            })
+
+            editField.appendChild(editInput);
+            editField.appendChild(saveBtn);
+
+            note.insertBefore(editField, rightCont);
+        }
+
+    })
 
     leftCont.appendChild(statusIco);
     leftCont.appendChild(text);
@@ -57,10 +80,9 @@ const addNote = value => {
         DOM.addNoteBtn.disabled = false;
         notesAmount--;
         note.remove();
-        if (document.getElementById('maxItemsWarn') !== undefined) {
+        if (document.getElementById('maxItemsWarn') !== null) {
             document.getElementById('maxItemsWarn').remove();
         }
-
     })
 
     rightCont.appendChild(deleteIco);
