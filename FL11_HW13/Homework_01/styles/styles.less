@@ -1,0 +1,127 @@
+@import "variables.less";
+
+
+
+.navbar-light .navbar-nav {
+
+    .nav-link {
+        color: rgba(0, 0, 0, 1);
+    }
+
+    .nav-link.active {
+        color           : white;
+        background-color: @blue;
+    }
+}
+
+
+h1,
+h2 {
+    color: @blue;
+}
+
+hr {
+    background-color: @blue;
+}
+
+.navbar {
+    padding-bottom: 0px;
+    padding-top   : 0px;
+}
+
+.nav-item {
+    line-height: 30px;
+}
+
+.custom-navbar {
+    border-bottom: 1px solid gainsboro;
+
+    div {
+        height: 100%;
+    }
+}
+
+.jumbotron {
+    background-color: white;
+
+    h1,
+    h2 {
+        color: @blue;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+.row.relative-sports {
+    margin-bottom: 1.4rem;
+
+    .artcl {
+        padding-bottom: 1rem;
+    }
+
+    .artcl-1 {
+        div {
+            border: 2px solid @red;
+        }
+
+        p {
+            background-color: @red;
+        }
+    }
+
+    .artcl-2 {
+        div {
+            border: 2px solid @blue;
+        }
+
+        p {
+            background-color: @blue;
+        }
+    }
+
+    .artcl-3 {
+        div {
+            border: 2px solid @orange;
+        }
+
+        p {
+            background-color: @orange;
+        }
+    }
+
+    .artcl-4 {
+        div {
+            border: 2px solid @green;
+        }
+
+        p {
+            background-color: @green;
+        }
+    }
+
+    p {
+        color           : white;
+        line-height     : 2.5rem;
+        margin          : auto 0;
+        vertical-align  : middle;
+        background-color: @blue;
+        font-size       : 1rem;
+    }
+}
+
+
+footer {
+    background-color: @grey;
+    padding-left    : 1.5rem;
+
+    p {
+        color      : white;
+        line-height: 2.5rem;
+    }
+}
