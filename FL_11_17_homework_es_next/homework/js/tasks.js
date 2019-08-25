@@ -1,14 +1,9 @@
-//TASK 1
 const maxElement = arr => Math.max(...arr);
 
-//TASK 2
 const copyArray = arr => new Array(...arr);
 
-//TASK 3
 const addUniqueId = obj => new Object({ ...obj, id: Symbol('unique identifier') });
 
-//TASK 4
-const oldObj = { name: 'Someone', details: { id: 1, age: 11, university: 'UNI' } }
 const regroupObject = oldObj => {
     let { name: firstName, details } = oldObj;
     let { age, university, id } = details;
@@ -17,12 +12,9 @@ const regroupObject = oldObj => {
         user: { age, firstName, id }
     })
 }
-//regroupObject(oldObj)
 
-//TASK 5
 const findUniqueElements = arr => [...new Set(arr)];
 
-//TASK 6
 const hideNumber = number => {
     if (number.length > 9) {
         const lastDigits = number.slice(-4);
@@ -32,9 +24,29 @@ const hideNumber = number => {
     }
 }
 
-//TASK 7
+const isRequired = () => { throw new Error('missing required param') }
+const add = (num1 = isRequired(), num2 = isRequired()) => num1 + num2;
 
+const getNames = url => {
+    const namesArray = [];
+    fetch(url)
+        .then(response => response.json())
+        .then(dataArray => {
+            for (let el of dataArray) { namesArray.push(el.name.toLowerCase()) }
+        })
+    return namesArray.sort();
+}
+//getNames('https://api.github.com/users/insaneAlex/repos');
 
-//TASK 8
+async function getNamesAsync(url) {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const namesArrey = [];
+        data.map(el => namesArrey.push(el.name.toLowerCase()));
 
-//TASK 9
+        return namesArrey.sort();
+    } catch (e) {
+        console.log(e);
+    }
+}
