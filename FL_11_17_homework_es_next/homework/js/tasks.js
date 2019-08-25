@@ -34,7 +34,7 @@ const getNames = url => {
         .then(dataArray => {
             for (let el of dataArray) { namesArray.push(el.name.toLowerCase()) }
         })
-    return namesArray.sort();
+    console.log(namesArray.sort());
 }
 //getNames('https://api.github.com/users/insaneAlex/repos');
 
@@ -45,7 +45,7 @@ async function getNamesAsync(url) {
         const namesArrey = [];
         data.map(el => namesArrey.push(el.name.toLowerCase()));
 
-        return namesArrey.sort();
+        console.log(namesArrey.sort());
     } catch (e) {
         console.log(e);
     }
