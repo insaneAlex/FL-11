@@ -148,23 +148,20 @@ const drawUsers = usersData => {
     return tbody;
 }
 
-function reqListener() {
-    users = JSON.parse(this.response);
-    document.getElementById('users-container').appendChild(drawUsers(users));
 
-    //remove spinner
-    document.getElementById('Backdrop').remove();
-}
-
-
-
-
-let oReq = new XMLHttpRequest();
-oReq.addEventListener('load', reqListener);
-
-oReq.open("GET", "https://jsonplaceholder.typicode.com/users");
-
-//ADD spinner
+var xhr = new XMLHttpRequest();
+xhr.open(`GET`, `https://jsonplaceholder.typicode.com/users`, true);
 root.appendChild(addSpinner());
-oReq.send();
-
+xhr.onload = function (e) {
+    if (xhr.status === 200) {
+        document.getElementById('Backdrop').remove();
+        users = JSON.parse(this.response);
+        document.getElementById('users-container').appendChild(drawUsers(users));
+    } else {
+        console.error(xhr.statusText);
+    }
+};
+xhr.onerror = function (e) {
+    console.error(xhr.statusText);
+};
+xhr.send(null);
