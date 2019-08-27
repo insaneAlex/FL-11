@@ -72,7 +72,11 @@ const drawUser = userData => {
             saveBtn.innerHTML = 'Save';
             saveBtn.addEventListener('click', () => {
                 let tableCont = document.getElementById('tbody');
-                users[userData.id - 1].name = input.value;
+                for (let user of users) {
+                    if (user.id === userData.id) {
+                        user.name = input.value;
+                    }
+                }
 
                 //Update user on server
                 updateUserOnServer(userData);
@@ -100,7 +104,12 @@ const drawUser = userData => {
             saveBtn.innerHTML = 'Save';
             saveBtn.addEventListener('click', () => {
                 let tableCont = document.getElementById('tbody');
-                users[userData.id - 1].email = input.value;
+
+                for (let user of users) {
+                    if (user.id === userData.id) {
+                        user.email = input.value;
+                    }
+                }
 
                 tableCont.innerHTML = null;
                 tableCont = drawUsers(users);
