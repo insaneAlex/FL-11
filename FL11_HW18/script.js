@@ -30,10 +30,29 @@ const updateUserOnServer = (user) => {
             document.getElementById('Backdrop').remove();
             console.table(users);
         } else {
+            document.getElementById('Backdrop').remove();
             console.error(users);
         }
     }
     xhr.send(json);
+}
+
+const deleteUserHandler = (user) => {
+    var url = "https://jsonplaceholder.typicode.com/users";
+    var xhr = new XMLHttpRequest();
+    xhr.open("DELETE", url + `/${user.id}`, true);
+    root.appendChild(addSpinner());
+    xhr.onload = function () {
+        var users = JSON.parse(xhr.responseText);
+        if (xhr.readyState == 4 && xhr.status == "200") {
+            document.getElementById('Backdrop').remove();
+            console.table(users);
+        } else {
+            document.getElementById('Backdrop').remove();
+            console.error(users);
+        }
+    }
+    xhr.send(null);
 }
 
 // YOU ARE ABLE TO EDIT NAME AND EMAIL
@@ -101,10 +120,22 @@ const drawUser = userData => {
         }
     })
 
+    let deleteBtn = document.createElement('td');
+    deleteBtn.innerHTML = 'Delete';
+    deleteBtn.className = 'delete-button';
+    deleteBtn.addEventListener('click', () => {
+        users = users.filter(user => user.id !== userData.id);
+        deleteUserHandler(userData);
+        let tbody = document.getElementById('tbody');
+        tbody.innerHTML = null;
+        tbody = drawUsers(users);
+    });
+
 
     raw.appendChild(id);
     raw.appendChild(name);
     raw.appendChild(email);
+    raw.appendChild(deleteBtn);
 
     return raw;
 }
