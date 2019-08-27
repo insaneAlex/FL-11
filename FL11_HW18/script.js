@@ -123,13 +123,21 @@ const drawUsers = usersData => {
 
 function reqListener() {
     users = JSON.parse(this.response);
-
     document.getElementById('users-container').appendChild(drawUsers(users));
 
+    //remove spinner
+    document.getElementById('Backdrop').remove();
 }
+
+
+
 
 let oReq = new XMLHttpRequest();
 oReq.addEventListener('load', reqListener);
+
 oReq.open("GET", "https://jsonplaceholder.typicode.com/users");
+
+//ADD spinner
+root.appendChild(addSpinner());
 oReq.send();
 
