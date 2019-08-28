@@ -83,11 +83,12 @@ const editField = (userParam, field, users) => {
 const drawUser = userParam => {
     const raw = document.createElement('tr');
     raw.className = 'raw';
-
     const id = document.createElement('td');
     id.className = 'id';
     id.textContent = userParam.id;
-
+    const userName = document.createElement('td');
+    userName.className = 'userName';
+    userName.textContent = userParam.username;
     const name = document.createElement('td');
     name.textContent = userParam.name;
     name.className = 'name';
@@ -111,6 +112,7 @@ const drawUser = userParam => {
         tbody = drawUsers(users);
     });
     raw.appendChild(id);
+    raw.appendChild(userName);
     raw.appendChild(name);
     raw.appendChild(email);
     raw.appendChild(deleteBtn);
@@ -131,9 +133,10 @@ xhr.open(`GET`, `https://jsonplaceholder.typicode.com/users`, true);
 root.appendChild(addSpinner());
 xhr.onload = function (e) {
     if (xhr.status === 200) {
+        let container = document.getElementById('users-container');
         document.getElementById('Backdrop').remove();
         users = JSON.parse(this.response);
-        document.getElementById('users-container').appendChild(drawUsers(users));
+        container.appendChild(drawUsers(users));
     } else {
         console.error(xhr.statusText);
     }
