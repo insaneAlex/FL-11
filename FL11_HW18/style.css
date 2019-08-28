@@ -64,7 +64,25 @@ thead {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.raw {
+    height: 40px;
+}
 
+.name {
+    width: 250px;
+}
+
+.email {
+    width: 250px;
+}
+
+.delete-button {
+    width: 30px;
+}
+
+.id {
+    width: 20px;
+}
 
 .Spinner,
 .Spinner:before,
