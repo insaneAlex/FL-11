@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/header/header';
-import Aux from './hoc/Auxx/Aux';
+import Aux from './hoc/Auxx/Auxx';
 import './App.css';
 
 class App extends Component {
