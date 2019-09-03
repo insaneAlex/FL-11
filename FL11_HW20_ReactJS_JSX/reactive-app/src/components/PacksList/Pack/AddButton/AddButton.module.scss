@@ -1,0 +1,12 @@
+.Button {
+  height: 35px;
+  width: 95px;
+  color: white;
+  background-color: #009aff;
+
+  border: none;
+  border-radius: 5px;
+}
+.Button:active {
+  opacity: 0.5;
+}
