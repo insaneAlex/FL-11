@@ -15,7 +15,10 @@ const CurrentPackDescription = props => {
             <h2>New! {props.currentPack.title}</h2>
             <h4>Includes</h4>
             <div>{chars}</div>
-            <AddButton price={props.currentPack.price} />
+            <AddButton
+                price={props.currentPack.price}
+                title={props.currentPack.title}
+                getItem={() => props.addItem} />
         </div>
     )
 }

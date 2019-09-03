@@ -6,7 +6,9 @@ import CurrentPackDescription from './CurrentPackDescription/CurrentPackDescript
 const HeaderContainer = props => {
     return (
         <div className={classes.HeaderContainer}>
-            <CurrentPackDescription currentPack={props.currentPack} />
+            <CurrentPackDescription
+                currentPack={props.currentPack}
+                addItem={props.getItem} />
             <Basket itemsToPurchase={props.itemsToPurchase} />
         </div>
     )

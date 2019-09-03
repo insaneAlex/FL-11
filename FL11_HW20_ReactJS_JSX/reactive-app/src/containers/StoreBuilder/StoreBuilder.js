@@ -19,7 +19,7 @@ class StoreBuilder extends Component {
             .then(response => response.json())
             .then(data => {
                 console.log(data.emoji);
-                this.setState({ emoji: data.emoji, currentPack: data.emoji[0] })
+                this.setState({ emoji: data.emoji, currentPack: data.emoji[1] })
             })
     }
 
@@ -30,11 +30,13 @@ class StoreBuilder extends Component {
                 {this.state.currentPack !== null ?
                     <HeaderContainer
                         currentPack={this.state.currentPack}
-                        itemsToPurchase={this.state.itemsToPurchase} />
+                        itemsToPurchase={this.state.itemsToPurchase}
+                        getItem={this.addToCartHandler} />
                     : null}
                 {this.state.emoji !== null ?
                     <PacksList
-                        emoji={this.state.emoji} get />
+                        emoji={this.state.emoji}
+                        getItem={this.addToCartHandler} />
                     : null}
             </div>
         )
