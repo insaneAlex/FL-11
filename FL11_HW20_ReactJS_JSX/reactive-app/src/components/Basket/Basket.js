@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Basket.module.scss';
 
 const basket = props => {
-    let items = props.itemsToPurchase;
+    let items = props.basket;
     return (
         <div className={classes.Basket}>
             <h4>Basket</h4>

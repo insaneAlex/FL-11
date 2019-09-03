@@ -1,21 +1,22 @@
 import React from 'react';
 import classes from './Pack.module.scss'
-import AddButton from './AddButton/AddButton';
+import AddButton from '../../AddButton/AddButton';
 import StarIcon from '@material-ui/icons/Star';
 import StarHalf from '@material-ui/icons/StarHalf';
 
 const pack = props => {
-
+    console.log(props)
     let rate = [];
+    const starsInteger = Math.floor(props.stars);
+    let difference = props.stars - starsInteger;
 
-    console.log(Math.floor(props.rate))
-    for (let i = 0; i < Math.floor(props.stars); i++) {
-        rate[i] = <StarIcon />
+    for (let i = 0; i < starsInteger; i++) {
+        rate[i] = <StarIcon key={rate.length + 1} />
     }
-    if (props.stars - Math.floor(props.stars) >= 0.5) {
-        rate.push(<StarHalf />)
+    if (difference >= 0.5) {
+        rate.push(<StarHalf key={rate.length + 1} />)
     }
-    console.log(rate)
+
 
     return (
         <div className={classes.Pack}>

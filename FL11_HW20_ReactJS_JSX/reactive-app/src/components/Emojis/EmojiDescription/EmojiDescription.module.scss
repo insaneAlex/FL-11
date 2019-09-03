@@ -1,22 +1,24 @@
-.CurrentPackDescription {
-  width: 450px;
+.EmojiDescription {
+  width: 100%;
   height: 140px;
   background-color: aliceblue;
   margin: 20px;
   margin-top: 0;
   padding: 10px;
+  text-align: left;
+  border-radius: 5px;
 }
 
-.CurrentPackDescription h2 {
+.EmojiDescription h2 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.CurrentPackDescription h4 {
+.EmojiDescription h4 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.CurrentPackDescription button {
+.EmojiDescription button {
   float: right;
 }

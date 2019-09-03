@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import HeaderContainer from '../../components/HeaderContainer/HeaderContainer';
-import PacksList from '../../components/PacksList/PacksList';
+import Emojis from '../../components/Emojis/Emojis';
+// import PacksList from '../../components/PacksList/PacksList';
 import classes from './StoreBuilder.module.scss';
+import Basket from '../../components/Basket/Basket';
 
 class StoreBuilder extends Component {
 
     state = {
         emoji: [],
-        itemsToPurchase: [],
+        basket: [],
         currentPack: null
     }
     addToCartHandler = (title, price) => {
@@ -25,19 +26,21 @@ class StoreBuilder extends Component {
 
 
     render() {
+        console.log(this.state.emoji)
         return (
-            <div className={classes.Header}>
+            <div className={classes.StoreBuilder}>
                 {this.state.currentPack !== null ?
-                    <HeaderContainer
+                    <Emojis
                         currentPack={this.state.currentPack}
-                        itemsToPurchase={this.state.itemsToPurchase}
-                        getItem={this.addToCartHandler} />
+                        emoji={this.state.emoji}
+                    />
                     : null}
-                {this.state.emoji !== null ?
+                <Basket basket={this.state.basket} />
+                {/* {this.state.emoji !== null ?
                     <PacksList
                         emoji={this.state.emoji}
                         getItem={this.addToCartHandler} />
-                    : null}
+                    : null} */}
             </div>
         )
     }

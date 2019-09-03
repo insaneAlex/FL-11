@@ -1,8 +1,8 @@
 import React from 'react';
 import Pack from './Pack/Pack';
-import classes from './PackList.module.scss'
+import classes from './EmojiList.module.scss'
 
-const packsList = props => {
+const emojiList = props => {
     const emojiArray = props.emoji;
     const emojiList = emojiArray.map(el => <Pack addToCart={props.addToCartHandler} key={el.id} title={el.title} stars={el.stars} price={el.price} />)
 
@@ -13,4 +13,4 @@ const packsList = props => {
     )
 }
 
-export default packsList;
+export default emojiList;
