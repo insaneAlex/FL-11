@@ -1,12 +1,33 @@
 .Pack {
   margin: 10px;
+  padding: 10px;
   background-color: aliceblue;
-  width: 29%;
-  height: 190px;
   border-radius: 10px;
+  width: 160px;
 }
 
 .Rate svg {
   color: orange;
   font-size: 15px;
+  margin-bottom: 10px;
+}
+.Char1 {
+  font-size: 47px;
+  letter-spacing: -36px;
+  z-index: 1;
+}
+.Char2 {
+  font-size: 33px;
+  letter-spacing: -45px;
+  vertical-align: middle;
+  z-index: 2;
+}
+.Char3 {
+  font-size: 20px;
+  letter-spacing: 20px;
+  vertical-align: bottom;
+  z-index: 3;
+}
+h3 {
+  margin-bottom: 0;
 }

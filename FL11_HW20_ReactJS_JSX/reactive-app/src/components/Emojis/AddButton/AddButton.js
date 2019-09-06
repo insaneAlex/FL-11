@@ -1,9 +1,22 @@
 import React from 'react';
 import classes from './AddButton.module.scss';
-//009AFF
+
 const addButton = props => {
-    return <button
-        className={classes.Button}>Get ({props.price}$)</button>
+    const data = props.emojiData;
+
+    if (data) {
+        const title = data.title;
+        return <button
+            onClick={() => {
+                props.addCart(title)
+            }}
+            className={classes.Button}
+        >{props.children} ({data.price}$)</button>
+    } else {
+        return <button
+            className={classes.Button}
+        >{props.children} ({}$)</button>
+    }
 }
 
 export default addButton;
