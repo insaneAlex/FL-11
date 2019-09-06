@@ -9,10 +9,10 @@ const basket = props => {
     return (
         <div className={classes.Basket}>
             <h4>Basket</h4>
-            {items.length !== 0 ? [
-                draw,
+            {items.length !== 0 ? <>
+                {draw}
                 <PurchaseButton>Purchase </PurchaseButton>
-            ]
+            </>
                 : <i>No items to purchase</i>}
         </div>
     )
