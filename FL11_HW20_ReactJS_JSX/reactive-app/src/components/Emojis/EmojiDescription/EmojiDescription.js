@@ -21,8 +21,11 @@ const CurrentPackDescription = props => {
             <h4>Includes: </h4>
             <div>{chars}</div>
             <AddButton
+                disableButtonHandler={props.disableButtonHandler}
+                totalCounter={props.totalCounter}
                 addCart={props.AddToCart}
                 emojiData={props.currentPack}
+                disabled={props.currentPack.disabled}
             >Get </AddButton>
         </div>
     )

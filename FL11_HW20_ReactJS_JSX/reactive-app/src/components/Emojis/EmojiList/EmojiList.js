@@ -5,6 +5,9 @@ import classes from './EmojiList.module.scss'
 const emojiList = props => {
     const emojiArray = props.emoji;
     const emojiList = emojiArray.map(el => <Pack
+        disableButtonHandler={props.disableButtonHandler}
+        disabled={el.disabled}
+        totalCounter={props.totalCounter}
         add={props.AddToCart}
         emojiData={el}
         key={el.id}

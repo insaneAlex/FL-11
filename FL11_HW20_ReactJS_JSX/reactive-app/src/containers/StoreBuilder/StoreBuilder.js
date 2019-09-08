@@ -10,12 +10,20 @@ class StoreBuilder extends Component {
         this.state = {
             emoji: [],
             basket: [],
+            totalSum: 0,
             currentPack: null
         }
         this.addToBasketHandler = this.addToBasketHandler.bind(this);
         this.deleteFromBasketHandler = this.deleteFromBasketHandler.bind(this);
+        this.totalSumCounter = this.totalSumCounter.bind(this);
+        this.disableButtonHandler = this.disableButtonHandler.bind(this);
     }
 
+    totalSumCounter(price) {
+        let oldSum = this.state.totalSum;
+        let newSum = oldSum + price;
+        this.setState({ totalSum: newSum });
+    }
 
     deleteFromBasketHandler(title) {
         const currBasketState = this.state.basket;
@@ -28,11 +36,25 @@ class StoreBuilder extends Component {
         this.setState({ basket: withNewItem });
     }
 
+    disableButtonHandler(id) {
+        const emojiState = this.state.emoji;
+        console.log(emojiState);
+        emojiState.forEach(element => {
+            if (element.id === id) {
+                element.disabled = true;
+            }
+        });
+        this.setState({ emoji: emojiState })
+    }
+
     componentDidMount() {
         fetch('http://localhost:1337/emoji-shop')
             .then(response => response.json())
             .then(data => {
                 const rand = Math.floor(Math.random() * data.emoji.length);
+                data.emoji.forEach(element => {
+                    element.disabled = false;
+                });
                 console.log(data.emoji);
                 this.setState({
                     emoji: data.emoji,
@@ -42,9 +64,6 @@ class StoreBuilder extends Component {
     }
 
     render() {
-        console.log(`Current Pack:`)
-        console.log(this.state.currentPack)
-
         return (
             <div className={classes.StoreBuilder}>
                 {this.state.currentPack !== null ?
@@ -52,11 +71,15 @@ class StoreBuilder extends Component {
                         currentPackObj={this.state.currentPack} //only to EmojiDescription
                         emojisArray={this.state.emoji} //to draw EmojiList
                         addToBasket={this.addToBasketHandler} //Buttom /add to basket
+                        totalCounter={this.totalSumCounter} // add to total sum
+                        disableButtonHandler={this.disableButtonHandler} // disable button
                     />
                     : <div>Emoji server is not responding...</div>
                 }
-                <Basket basket={this.state.basket} />
-            </div>//
+                <Basket
+                    sum={this.state.totalSum}
+                    basket={this.state.basket} />
+            </div>
         )
     }
 }

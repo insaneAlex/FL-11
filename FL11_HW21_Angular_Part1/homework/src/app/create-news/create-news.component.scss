@@ -1,0 +1,46 @@
+form {
+  margin: 50px auto;
+  padding: 20px;
+  border: 2px solid gray;
+  width: 500px;
+  height: 300px;
+  display: flex;
+  background-color: gainsboro;
+}
+form > div {
+  margin-right: 20px;
+}
+div {
+  display: flex;
+  flex-direction: column;
+}
+label,
+input,
+textarea {
+  display: block;
+  background-color: gainsboro;
+}
+label {
+  margin-bottom: 15px;
+}
+button {
+  text-align: center;
+  background-color: gainsboro;
+  border: 1px solid gray;
+  width: 70px;
+  height: 30px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+button {
+  color: black;
+  line-height: 200%;
+  align-self: flex-end;
+}
+button:active {
+  opacity: 0.9;
+}
+textarea {
+  resize: none;
+}

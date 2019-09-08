@@ -10,8 +10,16 @@ const Emojis = props => {
             <EmojiDescription
                 AddToCart={props.addToBasket}
                 currentPack={props.currentPackObj}
+                totalCounter={props.totalCounter}
+                disableButtonHandler={props.disableButtonHandler}
             />
-            <EmojiList AddToCart={props.addToBasket} emoji={props.emojisArray} />
+            <EmojiList
+                AddToCart={props.addToBasket}
+                emoji={props.emojisArray}
+                totalCounter={props.totalCounter}
+                disableButtonHandler={props.disableButtonHandler}
+            />
+
         </div>
     )
 }
