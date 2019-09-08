@@ -7,7 +7,6 @@ import { DataNewsService } from '../data-news.service';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
-
   posts = [];
   constructor(private data: DataNewsService) { }
   ngOnInit(): void {
