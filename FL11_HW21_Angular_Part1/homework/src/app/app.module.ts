@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import { PostsComponent } from './posts/posts.component';
 import { MaterialModule } from './material.module';
 import { CreateNews } from './create-news/create-news.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter'
+import { FormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -18,7 +22,9 @@ import { CreateNews } from './create-news/create-news.component';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Ng2SearchPipeModule, 
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,9 @@
-<div *ngFor="let post of posts">
+<input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+    placeholder="Start searching using similar words in article">
+<div *ngFor="let post of posts |filter:searchText">
     <h2>{{post.title}}</h2>
     <hr>
     <p>{{post.details}}</p>
     <p>Author: {{post.author}}</p>
+    <a href="">Read more...</a>
 </div>

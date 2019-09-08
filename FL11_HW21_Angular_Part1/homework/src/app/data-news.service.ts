@@ -8,13 +8,13 @@ export class DataNewsService {
 
     return [
       {
-        title: "Lorem ipsum",
-        details: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla dapibus lectus nec scelerisque rhoncus. Nullam in arcu odio. Suspendisse lobortis ac lectus tristique consequat. Curabitur ac quam tempor, iaculis nunc non, rhoncus ipsum. Donec convallis sem id efficitur mollis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In molestie porta pharetra.",
+        title: "Other News",
+        details: "We know this group of individuals was conducting surveillance on him, they were watching him, following him. We know they watched as he left the laundromat and went back across the street to the apartment complex and that is where some of those individuals accosted him,” Baltimore County Police Officer Jennifer Peach told Fox 45",
         author: 'James Blanco'
       },
       {
-        title: "Lorem ipsum dolor",
-        details: "Nulla facilisi. Quisque nulla neque, malesuada at porta nec, porta non tortor. Curabitur feugiat elit id sem sagittis faucibus. Donec volutpat enim vel tristique egestas. Phasellus accumsan quam magna, sit amet aliquam sapien mollis vel. Etiam varius tellus id.",
+        title: "Google News",
+        details: 'DescriptionGoogle News is a news aggregator app developed by Google. It presents a continuous, customizable flow of articles organized from thousands of publishers and magazines. Google News is available as an app on Android, iOS, and the Web. Google released a beta version in September 2002 and the official app in January 2006',
         author: 'Isaak Boo'
       }
     ]
