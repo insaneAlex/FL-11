@@ -3,11 +3,30 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "qqqq": {
+    "homework": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
         }
       },
       "root": "",
@@ -17,7 +36,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/qqqq",
+            "outputPath": "dist/homework",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +86,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "qqqq:build"
+            "browserTarget": "homework:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "qqqq:build:production"
+              "browserTarget": "homework:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "qqqq:build"
+            "browserTarget": "homework:build"
           }
         },
         "test": {
@@ -115,15 +134,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "qqqq:serve"
+            "devServerTarget": "homework:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "qqqq:serve:production"
+              "devServerTarget": "homework:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "qqqq"
+  "defaultProject": "homework"
 }

@@ -10,7 +10,19 @@ import { CreateNews } from './create-news/create-news.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter'
 import { FormsModule } from '@angular/forms';
 
+import { HttpClientModule } from "@angular/common/http";
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
+export const firebaseConfig = {
+  apiKey: "AIzaSyBxH9AWsAeB36qakxNirEhOLrNVHofd310",
+  authDomain: "angularhw2.firebaseapp.com",
+  databaseURL: "https://angularhw2.firebaseio.com",
+  projectId: "angularhw2",
+  storageBucket: "angularhw2.appspot.com",
+  messagingSenderId: "400133680450",
+  appId: "1:400133680450:web:28bf09c23f9d827a6decdb"
+};
 
 @NgModule({
   declarations: [
@@ -24,7 +36,10 @@ import { FormsModule } from '@angular/forms';
     MaterialModule,
     AppRoutingModule,
     Ng2SearchPipeModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
