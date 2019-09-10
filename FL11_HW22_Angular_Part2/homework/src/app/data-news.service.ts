@@ -12,7 +12,7 @@ export class DataNewsService {
   countNews: number = 0;
 
   ngOnInit() {
-    this.newsList = this.db.list('/todos', ref =>
+    this.newsList = this.db.list('/posts', ref =>
       ref.limitToFirst(11));
     this.newsList.snapshotChanges().subscribe(tmp => {
       this.countNews = tmp.length;
