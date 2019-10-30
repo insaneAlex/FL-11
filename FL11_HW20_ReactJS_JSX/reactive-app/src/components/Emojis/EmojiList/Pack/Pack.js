@@ -7,8 +7,6 @@ import StarHalf from '@material-ui/icons/StarHalf';
 const pack = props => {
     const emojiPackObj = props.emojiData;
     const starsInteger = Math.floor(emojiPackObj.stars);
-
-    console.log(emojiPackObj)
     const rate = [];
     for (let i = 0; i < starsInteger; i++) {
         rate.push(<StarIcon key={rate.length + 1} />);
@@ -16,7 +14,6 @@ const pack = props => {
     if ((emojiPackObj.stars - starsInteger) >= 0.5) {
         rate.push(<StarHalf key={rate.length + 1} />);
     }
-
     return (
         <div className={classes.Pack}>
             <div>

@@ -6,15 +6,11 @@ const CurrentPackDescription = props => {
     const packsEmoji = props.currentPack.emoji;
     const title = props.currentPack.title;
     let chars = '';
-
-    console.log(packsEmoji)
-
     if (packsEmoji !== undefined) {
         for (let i = 0; i < packsEmoji.length; i++) {
             chars = chars.concat(packsEmoji[i].char + ' ');
         }
     }
-
     return (
         <div className={classes.EmojiDescription}>
             <h2>New! {title}</h2>

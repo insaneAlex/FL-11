@@ -10,3 +10,10 @@
 .Button:active {
   opacity: 0.5;
 }
+.Button:disabled,
+.Button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
